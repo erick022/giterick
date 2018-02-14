@@ -1,0 +1,64 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+#define N 5
+int taille;
+
+double * creerMatrice(int n)
+{
+	double * M = malloc (n * n * sizeof(*M));
+	if (M == NULL)
+	{
+		printf("Erreur d'allocation");
+		exit(EXIT_FAILURE);
+	}
+
+	return M;
+}
+
+
+void creerMatriceGlobal(double * MatGlo, int taille)
+{
+	int i,j;
+
+	for(i=0;i<taille;i++)
+		for(j=0;j<taille;j++)
+		{
+			creerMatrice(*MatGlo);
+			
+		}
+}
+
+void creerMatriceLocale(double * MatLoc)
+{
+	int i,j;
+
+	for(i=0;i<N;i++)
+		for(j=0;j<N;j++)
+		{
+			creerMatrice(*MatLoc);
+			
+		}
+}
+
+
+void creerMatriceHauteur(double * MatHaut)
+{
+	int i,j;
+	for(i=0;i<taille;i++)
+		for(j=0;j<N;j++)
+		{
+			creerMatrice(*MatHaut);			
+		}
+
+}
+
+void creerMatriceGauche(double * MatGau)
+{
+	int i,j;
+	for(i=0;i<N;i++)
+		for(j=0;j<taille;j++)
+		{
+			creerMatrice(*MatGau);			
+		}
+}
